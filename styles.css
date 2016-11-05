@@ -1,0 +1,292 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height: 100%;
+    background-color: #eeeeee;
+}
+
+.view-row, .view-row > div {
+    height: 100%;
+}
+
+.slider-container {
+    height: 100%;
+    background-color: #eeeeee;
+    /*border: 1px solid #cccccc;*/
+    position: relative;
+    display: none;
+
+}
+
+.slider-controls {
+    position: absolute;
+    right: 0;
+    height: 300px;
+    border: 1px solid #fff;
+    width: 500px;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .7);
+    z-index: 10;
+}
+
+.control {
+    /*width: 50px;*/
+    /*height: 20px;*/
+    padding: 5px;
+    /*border: 1px solid #000;*/
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s;
+    background-color: rgb(211, 96, 49);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    /*background-color: #000000;*/
+}
+
+.inner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-color: #0000ff;*/
+}
+
+.move-block {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    display: none;
+    cursor: pointer;
+}
+
+.move-left {
+    left: 0;
+    /*top: 0;*/
+    /*background-color: blue;*/
+    z-index: 1000;
+    color: #fff;
+    line-height: 150px;
+    font-size: 24px;
+}
+
+.move-right {
+    line-height: 150px;
+    right: 0;
+    /*background-color: red;*/
+    /*top: 0;*/
+    z-index: 1000;
+    color: #fff;
+    font-size: 24px;
+}
+
+.control video {
+    display: none;
+    float: left;
+}
+
+.on-top .move-right, .on-top .move-left, .on-top video {
+    display: block;
+}
+
+.play-pause {
+    display: none;
+}
+
+.inner-block p, .inner-block a {
+    display: none;
+}
+
+.on-top {
+    width: 400px !important;
+    height: 150px !important;
+}
+
+.on-top video {
+    width: 120px;
+    /*width: 200px!important;*/
+    max-height: 80px !important;
+    border: 1px solid #000000;
+
+}
+
+.on-top .video {
+    /*margin-top: 25px;*/
+    position: relative;
+    float: left;
+    border: 3px solid #fff;
+    margin-left: 40px;
+    top: 50%;
+    margin-top: -45px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+    transition: all .1s;
+}
+
+.on-top .play-pause {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    color: #000;
+    /*background-color: #ffff00;*/
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    display: block;
+}
+
+.inner-block {
+    padding: 5%;
+    color: #fff;
+    transition: all .1s;
+}
+
+.on-top .inner-block {
+    margin-left: 145px;
+    margin-right: 15px;
+}
+
+.inner-block h2 {
+    margin-top: 0;
+}
+
+.inner-block a {
+    text-decoration: none;
+    color: #fff;
+    background: rgb(179, 81, 23);
+    padding: 3px 5px;
+    float: right;
+}
+
+.inner-block a:hover {
+    color: #eee;
+}
+
+.on-top .inner-block p, .on-top .inner-block a {
+    display: block;
+    line-height: 1em;
+    font-size: 14px;
+}
+
+.on-top h2 {
+    font-size: 24px !important;
+}
+
+.preloader {
+    position: absolute;
+    left: 100px;
+    height: 100px;
+}
+
+.circle {
+    background: rgba(255, 0, 0, 0.05);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-transition: all .25s;
+    margin: 5px;
+}
+
+.preload1 {
+    position: absolute;
+    display: none;
+    left: -9999px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    z-index: -1;
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+
+.slide.active {
+    opacity: 1;
+    left: 0;
+    z-index: 1;
+}
+
+.play-button {
+    color: #fff;
+}
+
+/*#slide1{*/
+/*background: url(/images/plugins/cssSlides/1.JPG) 50% 50% no-repeat ;*/
+/*background-size: 100% auto;*/
+/*}*/
+/*#slide2{*/
+/*background: url(/images/plugins/cssSlides/2.JPG) 50% 50% no-repeat ;*/
+/*background-size: 100% auto;*/
+/*}*/
+/*#slide3{*/
+/*background: url(/images/plugins/cssSlides/3.JPG) 50% 50% no-repeat ;*/
+/*background-size: 100% auto;*/
+/*}*/
+/*#slide4{*/
+/*background: url(/images/plugins/cssSlides/4.JPG) 50% 50% no-repeat ;*/
+/*background-size: 100% auto;*/
+/*}*/
+/*#slide5{*/
+/*background: url(/images/plugins/cssSlides/5.JPG) 50% 50% no-repeat ;*/
+/*background-size: 100% auto;*/
+/*}*/
+.spinner {
+    width: 7rem;
+    height: 7rem;
+    /*background-color: red;*/
+    border-radius: 50%;
+    -webkit-animation: changeColor 1s infinite;
+    animation: changeColor 1s infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -3.5rem;
+    z-index: 11;
+}
+
+.spinner span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 4rem;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    color: #fff;
+}
+
+@-webkit-keyframes changeColor {
+    0% {
+        background: #f48796
+    }
+    50% {
+        background: white
+    }
+    100% {
+        background: #f48796
+    }
+}
+
+@keyframes changeColor {
+    0% {
+        background: #f48796
+    }
+    50% {
+        background: white
+    }
+    100% {
+        background: #f48796
+    }
+}

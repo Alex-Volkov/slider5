@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vendor/bootstrap.css">
+</head>
+<body>
+<div class="slider-container" id="slider-container">
+    <div class="slider-controls" style="display:none">
+    </div>
+</div>
+<script src="vendor/jquery-3.1.1.min.js"></script>
+<script src="vendor/underscore.js"></script>
+<script src="load.js"></script>
+<script src="slider5.js"></script>
+<script>
+    var images = [[
+        '/assets/images/1.JPG',
+        '/assets/images/2.JPG',
+        '/assets/images/3.JPG',
+        '/assets/images/4.JPG',
+        '/assets/images/5.JPG'
+    ]
+    ];
+    var imageLoader = Object.create(Preloader);
+    imageLoader.load(images, images[0], 'img', true, function () {
+        var elems = [
+            {
+                videoLink: '/assets/sample.mp4',
+                header: 'Elem caption 1',
+                text: 'lorem ipsum dolor omen omnicus sat',
+                link: '#',
+                linkText: 'click here',
+                slideId: 'slide1'
+            },
+            {
+                videoLink: '/assets/sample.mp4',
+                header: 'Elem caption 2',
+                text: 'lorem ipsum dolor omen omnicus sat',
+                link: '#',
+                linkText: 'click here',
+                slideId: 'slide2'
+            },
+            {
+                videoLink: '/assets/sample.mp4',
+                header: 'Elem caption 3',
+                text: 'lorem ipsum dolor omen omnicus sat',
+                link: '#',
+                linkText: 'click here',
+                slideId: 'slide3'
+            },
+            {
+                videoLink: '/assets/sample.mp4',
+                header: 'Elem caption 4',
+                text: 'lorem ipsum dolor omen omnicus sat',
+                link: '#',
+                linkText: 'click here',
+                slideId: 'slide4'
+            },
+            {
+                videoLink: '/assets/sample.mp4',
+                header: 'Elem caption 5',
+                text: 'lorem ipsum dolor omen omnicus sat',
+                link: '#',
+                linkText: 'click here',
+                slideId: 'slide5'
+            },
+
+        ];
+        $('.spinner').hide();
+        document.getElementById('slider-container').style.display = 'block';
+        var $controls = $('.slider-controls');
+        $controls.fadeIn();
+        $controls.html5Slider({
+            containerSelector: '#slider-container',
+            elems: elems,
+            images: images[0],
+            slideTemplate: $('#slideTemplate').html(),
+            elemTemplate: $('#slideControlTemplate').html()
+        });
+    });
+
+</script>
+<script type="text/template" id="slideTemplate">
+    <div class="slide" id="slide{{slideId}}"></div>
+</script>
+<script type="text/template" id="slideControlTemplate">
+    <div class="control">
+        <div class="inner-wrapper">
+            <div class="move-left move-block"><span class="glyphicon glyphicon-chevron-left"></span></div>
+            <div class="video">
+                <video>
+                    <source src="{{videoLink}}" type="video/mp4">
+                </video>
+                <div class="play-pause "><span class="glyphicon glyphicon-play-circle play-button"></span></div>
+            </div>
+            <div class="move-right move-block"><span class="glyphicon glyphicon-chevron-right"></span></div>
+            <div class="inner-block">
+                <h2>{{header}}</h2>
+                <p>{{text}}</p>
+                <a href="{{link}}">{{linkText}}</a>
+            </div>
+        </div>
+    </div>
+</script>
+</body>
+</html>
